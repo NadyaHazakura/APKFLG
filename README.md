@@ -1,8 +1,8 @@
-# SafetyCore Blocker — Android GitHub Actions template
+# SafetyCoreBlocker — Android GitHub Actions template
 
 This repository is a minimal Android project that builds an APK and publishes it to a GitHub Release.
 
-Important: a normal third-party Android app cannot permanently prevent another package, such as Google SafetyCore, from being installed or updated. This template therefore does **not** contain code intended to interfere with Android package management, Google Play, or device security.
+Important: a normal third-party Android app cannot permanently prevent another package, such as GSC, from being installed or updated. This template therefore does **not** contain code intended to interfere with Android package management, Google Play, or device security.
 
 ## Build
 
