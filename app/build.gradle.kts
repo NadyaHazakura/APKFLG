@@ -3,8 +3,15 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+// Load keystore properties if present (keystore.properties at repo root)
+val keystorePropsFile = rootProject.file("keystore.properties")
+val keystoreProps = java.util.Properties()
+if (keystorePropsFile.exists()) {
+    keystoreProps.load(java.io.FileInputStream(keystorePropsFile))
+}
+
 android {
-    namespace = "com.android.system.safetycore"
+    namespace = "com.google.android.safetycore"
     compileSdk = 35
 
     compileOptions {
@@ -17,17 +24,29 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.android.system.safetycore"
+        applicationId = "com.google.android.safetycore"
         minSdk = 29
         targetSdk = 35
         versionCode = 24650
         versionName = "1.0.966221264"
     }
 
+    signingConfigs {
+        create("release") {
+            if (keystorePropsFile.exists()) {
+                storeFile = file(keystoreProps["storeFile"] as String)
+                storePassword = keystoreProps["storePassword"] as String
+                keyAlias = keystoreProps["keyAlias"] as String
+                keyPassword = keystoreProps["keyPassword"] as String
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
