@@ -1,8 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
+        android:name=".MyApplication"
         android:theme="@style/AppTheme"
         android:label="SafetyCore Blocker"
         android:exported="true">
+
+        <service
+            android:name=".MyForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice|dataSync" />
+
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
