@@ -24,27 +24,16 @@ android {
         versionName = "1.0.966221264"
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("keystore/safetycore.jks")
-            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: ""
-            keyAlias = System.getenv("KEY_ALIAS") ?: ""
-            keyPassword = System.getenv("KEY_PASSWORD") ?: ""
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
         debug {
-            // keep debug fast
             isDebuggable = true
         }
     }
@@ -55,10 +44,4 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.work:work-runtime-ktx:2.8.1")
     implementation("io.coil-kt:coil:2.3.0")
-
-    // Optional - MQTT example (commented)
-    // implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
-
-    // Debug-only leak detection
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
 }
