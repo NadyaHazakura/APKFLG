@@ -1,3 +1,5 @@
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -7,7 +9,7 @@ plugins {
 val keystorePropsFile = rootProject.file("keystore.properties")
 val keystoreProps = java.util.Properties()
 if (keystorePropsFile.exists()) {
-    keystoreProps.load(java.io.FileInputStream(keystorePropsFile))
+    keystoreProps.load(FileInputStream(keystorePropsFile))
 }
 
 android {
