@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.google.android.safetycore"
-    compileSdk = 37
+    compileSdk = 35
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -19,7 +19,7 @@ android {
     defaultConfig {
         applicationId = "com.google.android.safetycore"
         minSdk = 29
-        targetSdk = 37
+        targetSdk = 35
         versionCode = 24650
         versionName = "1.0.966221264"
     }
