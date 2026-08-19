@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.google.android.safetycore"
+    namespace = "com.android.system.safetycore"
     compileSdk = 35
 
     compileOptions {
@@ -17,7 +17,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.google.android.safetycore"
+        applicationId = "com.android.system.safetycore"
         minSdk = 29
         targetSdk = 35
         versionCode = 24650
