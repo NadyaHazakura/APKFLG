@@ -14,7 +14,8 @@ if (keystorePropsFile.exists()) {
 }
 
 android {
-    namespace = "com.google.android.safetycore"
+    // changed to avoid impersonating Google/system package
+    namespace = "com.nadyahazakura.apkflg"
     compileSdk = 35
 
     compileOptions {
@@ -27,7 +28,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.google.android.safetycore"
+        // changed to a unique applicationId
+        applicationId = "com.nadyahazakura.apkflg"
         minSdk = 29
         targetSdk = 35
         versionCode = 24650
