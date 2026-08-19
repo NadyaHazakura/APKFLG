@@ -1,4 +1,5 @@
 import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -7,7 +8,7 @@ plugins {
 
 // Load keystore properties if present (keystore.properties at repo root)
 val keystorePropsFile = rootProject.file("keystore.properties")
-val keystoreProps = java.util.Properties()
+val keystoreProps = Properties()
 if (keystorePropsFile.exists()) {
     keystoreProps.load(FileInputStream(keystorePropsFile))
 }
