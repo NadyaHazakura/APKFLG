@@ -1,0 +1,5 @@
+<resources>
+    <!-- Alias so build-types that previously overrode the launcher will use the main mipmap/ic_launcher -->
+    <item name="ic_launcher" type="mipmap">@mipmap/ic_launcher</item>
+    <item name="ic_launcher_round" type="mipmap">@mipmap/ic_launcher_round</item>
+</resources>
