@@ -35,7 +35,6 @@ android {
         }
         debug {
             // keep debug fast
-            applicationIdSuffix = ".debug"
             isDebuggable = true
         }
     }
