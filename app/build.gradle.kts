@@ -51,5 +51,5 @@ dependencies {
     // implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
 
     // Debug-only leak detection
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.11.1")
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
 }
